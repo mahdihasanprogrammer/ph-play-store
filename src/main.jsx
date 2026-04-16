@@ -2,12 +2,31 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router/dom'
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, Outlet } from 'react-router'
+import RootLayout from './layout/RootLayout'
+import HomePage from './pages/HomePage/HomePage'
+import Apps from './pages/Apps/Apps'
+import InstallApps from './pages/InstallApps/InstallApps'
+import NotFound from './pages/NotFoundPage/NotFound'
 
 const router = createBrowserRouter([
-  {path:'/', element:<h1>welcome to home page</h1>},
-  {path: 'app', element : <h1>this is app page</h1>},
-  {path: 'install', element: <p>install app</p>}
+  {
+    path:'/',
+    Component: RootLayout,
+    children: [
+      {
+        path:'/', Component: HomePage,
+      },
+      {
+        path:'/apps',Component:Apps,
+      },
+      {
+        path:'/installedApps', Component: InstallApps
+      }
+     
+    ],
+    errorElement: <NotFound/>
+  }
 ])
 
 createRoot(document.getElementById('root')).render(
