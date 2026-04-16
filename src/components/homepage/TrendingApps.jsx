@@ -2,35 +2,12 @@ import React, { useEffect, useState } from 'react';
 import AppCard from '../ui/AppCard';
 import {  Puff, RotatingLines } from 'react-loader-spinner';
 import { Link } from 'react-router';
+import useApp from '../../Hooks/useApp';
 
 
 const TrendingApps = () => {
-    const [apps, setApps] = useState([]);
-    const [loader, setLoader] = useState(true);
-
-// useEffect(() =>{
-//     fetch('/data.json').then(res => res.json()).then(data => {
-
-//        setTimeout(() =>{
-//          setApps(data)
-//         setLoader(false)
-//        },300 )
-//     })
-
-// },[])
-
- useEffect(()=>{
-    const fetchData = async() =>{
-        const res =await fetch('/data.json');
-        const data = await res.json();
-        
-        setTimeout( ()=> {
-            setApps(data);
-            setLoader(false)
-        }, 200)
-    }
-    fetchData();
- },[])
+  
+const {apps, loader} = useApp();
  
 
 return (

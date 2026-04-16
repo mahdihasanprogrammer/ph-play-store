@@ -1,35 +1,14 @@
-import React, { useEffect, useState } from 'react';
+
 import AppCard from '../../components/ui/AppCard';
 import { RotatingLines } from 'react-loader-spinner';
+import useApp from '../../Hooks/useApp';
 
 const Apps = () => {
  
-       const [apps, setApps] = useState([]);
-        const [loader, setLoader] = useState(true);
-    
-    // useEffect(() =>{
-    //     fetch('/data.json').then(res => res.json()).then(data => {
-    
-    //        setTimeout(() =>{
-    //          setApps(data)
-    //         setLoader(false)
-    //        },300 )
-    //     })
-    
-    // },[])
-    
-     useEffect(()=>{
-        const fetchData = async() =>{
-            const res =await fetch('/data.json');
-            const data = await res.json();
-            
-            setTimeout( ()=> {
-                setApps(data);
-                setLoader(false)
-            }, 200)
-        }
-        fetchData();
-     },[])
+// fetch data using custom useApp hook;
+const {apps, loader} = useApp();
+  
+
      
     
     return (
