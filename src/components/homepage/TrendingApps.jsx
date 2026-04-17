@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+
 import AppCard from '../ui/AppCard';
-import {  Puff, RotatingLines } from 'react-loader-spinner';
+import { RotatingLines } from 'react-loader-spinner';
 import { Link } from 'react-router';
 import useApp from '../../Hooks/useApp';
 
@@ -35,7 +35,7 @@ return (
         width="50"/>
     </div> :
 
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
         {apps.slice(0,8).map(app => <AppCard app ={app} key={app.id} />)}
     </div>}
 

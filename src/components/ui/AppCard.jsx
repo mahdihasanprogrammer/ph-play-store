@@ -1,12 +1,14 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FiDownload } from 'react-icons/fi';
+import { Link } from 'react-router';
 
 const AppCard = ({app}) => {
     return (
-          <div className="card bg-base-100  shadow-sm card-body space-y-4 ">
+          <Link to={`/apps/${app.id}`}
+           className="card bg-base-100  shadow-sm card-body space-y-4 ">
               <figure>
-               <img className='h-52 rounded-2xl ' src={app.image} alt={app.title} />
+               <img className='h-44 rounded-2xl ' src={app.image} alt={app.title} />
               </figure>
 
               <div className=" space-y-4">
@@ -23,7 +25,7 @@ const AppCard = ({app}) => {
                    </span>
                </div>
               </div>
-            </div>
+            </Link>
     );
 };
 
