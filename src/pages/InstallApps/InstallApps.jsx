@@ -3,7 +3,7 @@ import { InstalledAppsContext } from '../../context/InstalledAppsContext';
 import { FaStar, FaStreetView } from 'react-icons/fa';
 import { MdOutlineFileDownload } from 'react-icons/md';
 import { toast } from 'react-toastify';
-import { div } from 'framer-motion/client';
+
 
 
 const InstallApps = () => {
@@ -23,7 +23,7 @@ const InstallApps = () => {
     return (
     <div className='container mx-auto px-5 md:px-8 lg:px-12 space-y-4 py-15 md:py-20'>
     { 
-     installedApps.length===0 ? <div className='flex items-center bg-gray-200 rounded-2xl  justify-center h-[40vh]'>
+     installedApps.length===0 ? <div className='flex px-5 items-center bg-gray-200 rounded-2xl justify-center h-[40vh]'>
         <h2 className='text-3xl font-bold'>No installed app found!</h2>
     </div> : 
 

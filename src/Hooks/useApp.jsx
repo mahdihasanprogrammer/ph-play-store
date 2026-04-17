@@ -17,6 +17,7 @@ const useApp = () => {
         // },[])
         
          useEffect(()=>{
+            console.log('useEffect')
             const fetchData = async() =>{
                 const res =await fetch('/data.json');
                 const data = await res.json();
